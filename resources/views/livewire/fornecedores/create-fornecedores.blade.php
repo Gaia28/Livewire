@@ -6,7 +6,7 @@
             {{ session('success') }}
         </div>
     @endif
-
+    
     <form wire:submit.prevent="salvar" class="space-y-4">
         <div>
             <label class="block font-medium text-sm text-gray-700">Nome</label>

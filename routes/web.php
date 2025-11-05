@@ -13,5 +13,5 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
-Route::get('fornecedores', [CreateFornecedores::class, 'render'])->name('create.fornecedores')->middleware('auth');
+Route::get('fornecedores', CreateFornecedores::class)->name('create.fornecedores')->middleware('auth');
 require __DIR__.'/auth.php';
