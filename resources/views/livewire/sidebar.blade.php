@@ -21,7 +21,7 @@
 
     <nav class="flex-1 p-4 ">
         {{-- Fornecedores --}}
-        <x-nav-link :href="route('create.fornecedores')" :active="request()->routeIs('create-fornecedores')" wire:navigate>
+        <x-nav-link :href="route('create.fornecedores')" :active="request()->routeIs('create.fornecedores')" wire:navigate>
             <span class="text-white  text-2xl">{{ __('Fornecedores') }}</span>
         </x-nav-link>
 

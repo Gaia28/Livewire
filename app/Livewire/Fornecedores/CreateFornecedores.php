@@ -15,11 +15,17 @@ class CreateFornecedores extends Component
         'cnpj' => 'nullable|string|min:14|max:18',
     ];
     public function StoreFornecedor()  {
-        $this->validate();
+        // 2. Valida e obtém os dados
+        $validatedData = $this->validate($this->rules);
 
-        Fornecedor::create([
-            
-        ]);
+        // 3. Cria o Fornecedor com os dados validados
+        Fornecedor::create($validatedData);
+
+        // 4. Envia a mensagem de sucesso para a sessão
+        session()->flash('success', 'Fornecedor cadastrado com sucesso!');
+
+        // 5. Limpa os campos do formulário
+        $this->reset('name', 'email', 'address', 'cnpj');
     }
     public function render()
     {
